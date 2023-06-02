@@ -58,11 +58,11 @@ def main():
     arguments = sys.argv[1:]  # Exclude the script name
     operation = arguments[0]
     if operation == "encrypt":
-        operation, password, input_file, output_file = arguments
+        password, input_file, output_file = arguments[1:]
         plainText = read_csv_to_plaintext(input_file)
         encrypt_to_bin(plainText, password, output_file)
     elif operation == "decrypt":
-        operation, password, input_file, output_file = arguments
+        password, input_file, output_file = arguments[1:]
         try:
             decrypted = decrypt_from_bin(input_file, password)
             write_plaintext_to_csv(decrypted, output_file) 
@@ -74,4 +74,6 @@ def main():
         print(f"Your random salt is: {salt}")
     else:
         print('Unknown operation')
-main()
+
+if __name__ == "__main__":
+    main()
