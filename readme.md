@@ -29,7 +29,7 @@ To run the program, execute the following command:
 python main.py <operation> <password> <input_file> <output_file>
 ```
 
-- `<operation>`: Specify the operation to perform. Use `encrypt` to encrypt a CSV file or `decrypt` to decrypt a binary file. Use `get_salt` to generate a new salt.
+- `<operation>`: Specify the operation to perform. Use `-e` to encrypt a CSV file or `-d` to decrypt a binary file. Use `get_salt` to generate a new salt.
 - `<password>`: The password to use for encryption or decryption.
 - `<input_file>`: The path to the input file (CSV file for encryption or binary file for decryption).
 - `<output_file>`: The path to the output file (binary file for encryption or CSV file for decryption).
@@ -37,13 +37,13 @@ python main.py <operation> <password> <input_file> <output_file>
 For example, to encrypt a CSV file:
 
 ```shell
-python main.py encrypt mypassword input.csv encrypted.bin
+python main.py -e mypassword input.csv encrypted.bin
 ```
 
 To decrypt a binary file:
 
 ```shell
-python main.py decrypt mypassword encrypted.bin output.csv
+python main.py -d mypassword encrypted.bin output.csv
 ```
 
 To generate a new salt and add it to the .env file:

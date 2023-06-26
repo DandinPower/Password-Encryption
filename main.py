@@ -57,11 +57,11 @@ def write_plaintext_to_csv(plaintext, file_path):
 def main():
     arguments = sys.argv[1:]  # Exclude the script name
     operation = arguments[0]
-    if operation == "encrypt":
+    if operation == "-e":
         password, input_file, output_file = arguments[1:]
         plainText = read_csv_to_plaintext(input_file)
         encrypt_to_bin(plainText, password, output_file)
-    elif operation == "decrypt":
+    elif operation == "-d":
         password, input_file, output_file = arguments[1:]
         try:
             decrypted = decrypt_from_bin(input_file, password)
