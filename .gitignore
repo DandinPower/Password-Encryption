@@ -1,4 +1,5 @@
 *.csv
 *.bin
 *.env
-flagged
+*.txt
+*.DS_Store
